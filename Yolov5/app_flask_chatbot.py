@@ -1,12 +1,7 @@
 from flask import Flask, request, render_template,jsonify
-import torch
 import os
 from Chatbot.model.chatbot.kogpt2 import chatbot as ch_kogpt2
-from werkzeug.exceptions import BadRequest
-from kss import split_sentences
-import json
-from Yolov5.kakao import kakao_message_to_friends_location as kakao
-
+from static.css.kakao import kakao_message_to_friends_location as kakao
 
 count = 0
 ultra_negative_words=['자살','죽고','죽이고','살인','지옥','천국']
