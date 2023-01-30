@@ -3,7 +3,7 @@
 import requests
 import json
 import os
-from Yolov5.kakao import kakao_utils_friends
+import kakao_utils_friends
 import glob
 
 def send_message_to_friends():

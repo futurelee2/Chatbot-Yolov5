@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset = "UTF-8"/>
+    <title> 1인 가구를 위한 사고 감지 프로그램 "HOLO" </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
+    <style>
+
+    body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;}
+
+    ul, li {
+    list-style:none; }
+
+    a {
+    text-decoration: none;
+    color: black;}
+
+    .root {
+    background-color:#fa9370;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13,110,253;
+    --bs-secondary-rgb: 108,117,125;
+    --bs-success-rgb: 25,135,84;
+    --bs-info-rgb: 13,202,240;
+    --bs-warning-rgb: 255,193,7;
+    --bs-danger-rgb: 220,53,69;
+    --bs-light-rgb: 248,249,250;
+    --bs-dark-rgb: 33,37,41;
+    --bs-white-rgb: 255,255,255;
+    --bs-black-rgb: 0,0,0;
+    --bs-body-color-rgb: 33,37,41;
+    --bs-body-bg-rgb: 255,255,255;
+    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --bs-gradient: linear-gradient(180deg,hsla(0,0%,100%,0.15),hsla(0,0%,100%,0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;}
+
+    .MainTitleWrap {
+    font-family:Black Han Sans, sans-serif;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("https://mblogthumb-phinf.pstatic.net/MjAxOTAyMjBfMTE2/MDAxNTUwNjY4OTk0Njk5.r2H_IPUWalo0XS0vn9lNpj-fabT1C4sqjC2wtpgbWvog.FG_krShNvoQtN8EhpudwgeZwkVfWa2hKsIdS7fijSg4g.JPEG.birth_222/papers.co-nb49-snow-mountain-nature-winter-cold-nature-flare-3840x2160.jpg?type=w800");
+    background-size:cover;
+    width:100vw;
+    font-size:40px;
+    padding-top:70px;
+    padding-bottom:50px;
+    box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);}
+
+
+    .MainTitle {
+    font-family:Black Han Sans, sans-serif;
+    font-size:65px;
+    text-shadow: 2px 3px 0 #666666;}
+
+    .MainTitleLine {
+    width: 8rem;
+    height: 0;
+    margin: 2.5rem auto;
+    border: none;
+    border-top: 0.2rem solid #f4623a;
+    opacity: 1;}
+
+    .MainTitleSub {
+    font-family:Noto Sans KR,sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2;
+    color:white;
+    text-shadow: 2px 3px 0 black;}
+
+    .MainTitleSubName {
+    font-family:Noto Sans KR,sans-serif;
+    font-weight: 400;
+    font-size: 1.00rem;
+    padding-top: 5%;
+    color:white;;
+    text-shadow: 2px 3px 0 black;}
+
+
+    .paragraph_wrap{
+    font-family:Black Han Sans, sans-serif;
+    box-sizing: border-box;
+    webkit-box-sizing: border-box;
+    width: 100%;
+    max-width: 77.25rem;
+    padding: 4rem 5rem;
+    margin: 0 auto;}
+
+    .paragraph{
+    padding: 1rem;
+    line-height: 10px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);
+    webkit-box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);}
+
+    .paragraph_title {
+    display: table;
+    position: relative;
+    margin: 0 auto 3rem;}
+
+    .paragraph_title_text {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.5;}
+
+    .paragraph_text_title {
+    font-family: Black Han Sans,sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #222;
+    text-align: center; }
+
+   .paragraph_text_title_small {
+    margin-bottom: 2rem;
+    font-family: Noto Sans KR,sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding-bottom : 1rem;
+    text-align: center;
+    opacity: .8; }
+
+    .paragraph_contents {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    display: -ms-flexbox;
+    -webkit-flex-flow: row wrap;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;}
+
+    .paragraph_image {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    }
+
+    .paragraph_red {
+    color:#f04830;
+    font-weight:700;
+    font-size:1.2rem; }
+
+    .paragraph_mark {
+     background-color: #fa9370;
+     color: white;
+     border-radius: 7px;
+     font-size: 1.2rem;
+     font-weight: 700;
+    }
+
+    .paragraph_text_divided {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-weight: 400;
+    font-size: 1rem; }
+
+    .swiper-container {
+    width:400px;
+    height:400px;
+    }
+
+    .swiper-slide {
+     text-align:center;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+    }
+
+    .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    }
+
+    .paragraph_text {
+     width: 45%;
+     margin-left: 10px;
+     font-family: Noto Sans KR,sans-serif;
+     font-size: 0.9rem;
+     font-weight: 500;
+     line-height: 1.5;
+     }
+
+     .project_label {
+    display: inline-block;
+    vertical-align: top;
+    width: 8.4rem;
+    font-weight: 900;
+    font-size: 1rem; }
+
+    .project_label::before {
+    content: "✔";
+    display: inline;
+    padding-right: 0.5rem;}
+
+    .project_value {
+    display: inline-block;
+    vertical-align: bottom;
+    width: -moz-calc(100% - 8.4rem);
+    width: calc(100% - 10rem);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 3rem; }
+
+    .footer_bar {
+    height: 11rem;
+    padding-top: 3rem;
+    background-color: #222;
+    text-align: center;}
+
+
+    .footer_icon {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    padding: 2px;
+    margin: 0 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: #fff;}
+
+
+    .footer_text {
+    padding-top: 1rem;
+    font-weight: 200;
+    font-size: .9rem;
+    color: #f5f5f5;}
+
+
+    </style>
+</head>
+
+<body class = "root">
+    <div class = "MainTitleWrap">
+        <div class = "MainTitle" align="center"> 1인 가구를 위한<br>사고 감지 프로그램<br>" H O L O " </div>
+        <div class = "MainTitleLine" align="center"></div>
+        <div class = "MainTitleSub" align="center"> 빅데이터 분석 및 서비스기획 부트캠프 <br> "열정사" 팀의 파이널 프로젝트를 소개합니다. </div>
+        <div class = "MainTitleSubName" align="center"> 팀원 : 이동호/이미래/전혜영/최종현 </div>
+    </div>
+
+    <div id = "MainText">
+<!--파라그래프 1-->
+        <div id = "paragraph1">
+<!--파라그래프 1-1의 전체-->
+            <div class = "paragraph_wrap">
+                <!--파라그래프 1의 제목-->
+                <div class = "paragraph_title">
+                    <div class = "paragraph_title_text"> 개 요 </div>
+                </div>
+
+                <!--파라그래프 1-1번 내용 -->
+                <div class = "paragraph">
+                    <div id = "paragraph_text_title_box1-1">
+                        <P class = "paragraph_text_title"> 프로젝트 개요 </P>
+                        <P class = "paragraph_text_title_small"> 1인 가구 증가와 사회적 이슈 </P>
+                    </div>
+
+                    <div class = "paragraph_contents" style="padding-top: 2rem;">
+                        <div class = "paragraph_image">
+                            <img src= "https://www.sisajournal.com/news/photo/202207/243189_155417_935.jpg" style="width: 100%; height: auto;"/>
+                        </div>
+                        <div class= "paragraph_text" style="padding-bottom: 7rem;">
+                            <p> 매년 가파르게 증가하고 있는 1인 가구의 수와 그에 따른 <br><span class= "paragraph_red"> 우울증, 고독사 </span> 등의 비율도 함께 증가하고 있습니다. </p>
+                            <p> 그로 인해 화두되는 사회적인 문제를 개선하고자, <br><span class="paragraph_mark">1인가구를 위한 AI모델 프로젝트 "HOLO"</span> <br>를 기획하였습니다. </p>
+                            </p>
+                            <p> 첫 번째는 <b>화재 및 낙상 감지를 통한 알림서비스</b>입니다. 화재가 발생하거나 급작스럽게 낙상 할 경우, 카카오톡 알림을 통해 본인과 지인에게 전달하여 신속히 대응 할 수 있는 모델입니다.
+                            </p>
+                            <p> 두 번째는 <b>외롭게 지내는 1인 가구를 위한 심리상담 챗봇</b>입니다. 홀로 거주하면서 정서적 결핍으로 우울과 불안에 노출되기 쉽다는 점에서 챗봇 <b>‘한우리’</b> 를 통해 격려와 위로를 받을 수 있는 모델입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "paragraph_wrap">
+
+                <!--파라그래프 1-2번 내용 -->
+                <div class = "paragraph">
+                    <div id = "paragraph_text_title_box1-2">
+                        <P class = "paragraph_text_title"> 프로젝트 작업 환경 </P>
+                        <P class = "paragraph_text_title_small"> 사용된 패키지 & 작업 환경 </P>
+                    </div>
+
+                    <div class = "paragraph_contents">
+                        <div class = "paragraph_image" style="width:460px; height:auto; left: -3%;">
+                            <img src= "https://i.esdrop.com/d/f/NXl6YkfhTU/fScqJ2LLw9.png" style="width: 100%; height: auto;"/>
+                        </div>
+                        <div class= "paragraph_text">
+                            <div class ="paragraph_text_divided">
+                                <p> 해당 프로젝트는 <b>물체 감지 모델 'YoLov5'와 한국어 문장<br> 생성 모델인 'KoGPT2'</b>를 기반으로 제작되었습니다.</p>
+                                <p> <b>"Flask"</b> 를 사용하여 로컬 서버를 연 후에 웹사이트를 통해서<br> 프로젝트에 대한 상세한 설명과 간단하게 시연할 수 있도록,<br><b>웹사이트를 제작</b>하였습니다.</p>
+                            </div>
+                            <div class ="paragraph_text_divided" style="border-bottom: none; line-height: 3rem;">
+                                <div id= "project_desc_1">
+                                    <div class = "project_label"> 작업 환경 </div>
+                                    <li class = "project_value" style="padding-left:20px;"> Python 3.8 </li>
+                                    <div class = "project_label"> 사용 패키지 </div>
+                                    <li class = "project_value" style="padding-left:20px; padding-top:5px; line-height:2rem;"> Flask, NumPy, Pandas, Opencv,<br>KaKaoAPI, etc...
+                                    </li>
+                                    <div class = "project_label"> 참고 자료 </div>
+                                    <li class = "project_value" style="padding-left:20px; line-height:2rem; padding-top:5px; font-size:0.9rem;">
+                                        <a style="color:#59b9ea;" href="https://github.com/ultralytics/yolov5">github.com/ultralytics/yolov5</a><br>
+                                        <a style="color:#59b9ea;" href="https://github.com/spacewalk01/yolov5-fire-detection">github.com/spacewalk01/yolov5-fire-detection</a><br>
+                                        <a style="color:#59b9ea;" href="https://github.com/hoit1302/kogpt2-wellness-chatbot">github.com/hoit1302/kogpt2-wellness-chatbot</a><br>
+                                        <a style="color:#59b9ea;" href="https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=176">AI HUB 화재 발생 예측 영상</a><br>
+                                        <a style="color:#59b9ea;" href="https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=86">AI HUB 감성 대화 말뭉치</a><br>
+                                        <a style="color:#59b9ea;" href="https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=167">AI HUB 시니어 이상행동 영상</a><br>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!--파라그래프 2-->
+        <div id = "paragraph2">
+<!--파라그래프 2-1의 전체-->
+            <div class = "paragraph_wrap">
+                <!--파라그래프 12 제목-->
+                <div class = "paragraph_title">
+                    <div class = "paragraph_title_text">
+                        <a target="_blank" class="con_link" href="http://192.168.0.52:5000/yolo" src="http://192.168.0.52:5000/yolo"> 화재 및 낙상 감지 </a>
+                    </div>
+                </div>
+
+                <!--파라그래프 2-1번 내용 -->
+                <div class = "paragraph">
+                    <div id = "paragraph_text_title_box2-1">
+                        <P class = "paragraph_text_title"> "화재 및 낙상 감지" </P>
+                    </div>
+
+                    <div class = "paragraph_contents">
+                        <a target="_blank" class="con_link" href="http://192.168.0.52:5000/yolo" src="http://192.168.0.52:5000/yolo">
+                            <img src = "https://data.si.re.kr/sites/default/files/styles/large/public/2021-06/06P02903Aa42000_0.jpg?itok=nyWmLZN7">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<!--파라그래프 3-->
+        <div id = "paragraph3">
+<!--파라그래프 3-1의 전체-->
+            <div class = "paragraph_wrap">
+                <!--파라그래프 3 제목-->
+                <div class = "paragraph_title">
+                    <div class = "paragraph_title_text">
+                        <a target="_blank" class="con_link" href="http://192.168.0.52:5000/chatbot" src="http://192.168.0.52:5000/chatbot"> 위로형 챗봇 </a>
+                    </div>
+                </div>
+
+                <!--파라그래프 3-1번 내용 -->
+                <div class = "paragraph">
+                    <div id = "paragraph_text_title_box3-1">
+                        <P class = "paragraph_text_title"> 위로형 챗봇 : 한우리 </P>
+                    </div>
+
+                    <div class = "paragraph_contents">
+                        <a target="_blank" class="con_link" href="http://192.168.0.52:5000/chatbot" src="http://192.168.0.52:5000/chatbot">
+                            <img src = "https://data.si.re.kr/sites/default/files/styles/large/public/2021-06/06P02903Aa42000_0.jpg?itok=nyWmLZN7">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class= 'footer_bar'>
+        <a target="_blank" class="con_link" href="https://github.com/futurelee2/Yolov5-Chatbot">
+        <img class="footer_icon" src = "https://cdg-portfolio.com/images/footer/git-hub.png">
+        </a>
+        <div class="footer_text">© 2023. Passion x 4. All rights reserved.</div>
+    </footer>
+    <script>
+            new Swiper('.swiper1', {
+                pagination : {
+                    el : '.swiper-pagination',
+                    clickable : true
+                },
+                navigation : {
+                    nextEl : '.swiper-button-next',
+                    prevEl : '.swiper-button-prev',
+                },
+            });
+
+            // swiper2
+            new Swiper('.swiper2', {
+                pagination : {
+                    el : '.swiper-pagination',
+                    clickable : true
+                },
+                navigation : {
+                    nextEl : '.swiper-button-next',
+                    prevEl : '.swiper-button-prev',
+                },
+            });
+    </script>
+
+</body>
+</html>
