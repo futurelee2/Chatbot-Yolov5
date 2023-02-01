@@ -76,47 +76,29 @@ class KoGPT2Chat(LightningModule):
         return output.logits
 
     def chat(self, input_sentence, sent='1'):
-        print('input_sentence : ',input_sentence)
         tok = TOKENIZER
         sent_tokens = tok.tokenize(sent)
         with torch.no_grad():
             q = input_sentence.strip()
-            print('q: ',q)
             a = ''
             while 1:
                 input_ids = torch.LongTensor(tok.encode(U_TKN + q + SENT + sent + S_TKN + a)).unsqueeze(dim=0)
-                print('input_ids : ',input_ids)
                 pred = self(input_ids)
-                print(pred.shape)
-                print('pred : ',pred)
-                print(torch.argmax(pred,dim=-1))
-                print(torch.argmax(pred, dim=-1).squeeze(),type(torch.argmax(pred, dim=-1).squeeze()))
-                print(torch.argmax(pred, dim=-1).squeeze().numpy(), type(torch.argmax(pred, dim=-1).squeeze().numpy()))
-                print(torch.argmax(pred, dim=-1).squeeze().numpy().tolist())
-                print(tok.convert_ids_to_tokens(torch.argmax(pred, dim=-1).squeeze().numpy().tolist()))
                 gen = tok.convert_ids_to_tokens(torch.argmax(pred, dim=-1).squeeze().numpy().tolist())[-1]
-                print('gen : ',gen)
                 # print(gen) # <pad>
                 if gen == EOS or gen == PAD: # PAD 무한 루프 에러 방지
                     break
                 a += gen.replace('▁', ' ')
-                print('a_before : ',a)
             a = a.strip()
-            print('a_after : ', a)
             period_pos = a.rfind(".")
-            print('period_pos',period_pos)
             question_pos = a.rfind("?")
-            print('question_pos', question_pos)
             exclamation_pos = a.rfind("!")
-            print('exclamation_pos', exclamation_pos)
             last_pos = len(a) - 1
             # print (str(period_pos) + " " + str(question_pos) + " " + str(exclamation_pos))
             if last_pos == period_pos or last_pos == question_pos or last_pos == exclamation_pos:
                 return a
             mark_pos = max(max(period_pos, question_pos), exclamation_pos)
-            print('mark_pos : ',mark_pos)
             a = a[:mark_pos + 1]
-            print('a : ',a)
             if a == "":
                 return "(끄덕끄덕) 듣고 있어요. 더 말씀해주세요!"
             return  a
