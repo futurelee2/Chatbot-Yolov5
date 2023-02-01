@@ -2,12 +2,50 @@
   <img width="850" src="https://i.esdrop.com/d/f/CcSudjZ5R8/permf9tpHa.png">
 </div>
 <br>
-<div style=>\
+<div style=>
 
-### 📌 
-### 📌 1인 가구를 위한 사고 감지 프로그램 " H O L O "
 
-------------------------------------------------------------
+
+<h2> 📊 프로젝트 개요 </h2>
+
+<div>
+<p> 안녕하십니까
+</div>
+
+
+<h2> 🔥 화재 및 낙상 감지 </h2>
+
+<div>
+
+<details>
+<summary></summary>
+</details>
+<details>
+<summary></summary>
+</details>
+<details>
+<summary></summary>
+</details>
+
+<h2> 👭 위로형 챗봇 : 한우리 </h2>
+
+<div>
+
+<details>
+<summary></summary>
+</details>
+<details>
+<summary></summary>
+</details>
+<details>
+<summary></summary>
+</details>
+
+- - -
+<div align = "center">
+<h4> 💽Tech Stack 💽 </h4>
+<p> 🚋 Plaforms & Languages 💬
+<br><br>
 <img src = "https://img.shields.io/static/v1?label=Python&message=v3.8&color=red">
 <img src = "https://img.shields.io/static/v1?label=Flask&message=2.2.2&color=orange">
 <img src = "https://img.shields.io/static/v1?label=Matplotlib&message=3.5.3&color=yellow">
@@ -19,9 +57,4 @@
 <br>
 <img src = "https://img.shields.io/static/v1?label=&message=HTML&color=brightgreen">
 <img src = "https://img.shields.io/static/v1?label=&message=JavaScript&color=coral">
-### 📊 프로젝트 개요
-**************************************************************
-<div>
-
-<p></p>
 </div>
