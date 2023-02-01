@@ -2,19 +2,18 @@
   <img width="850" src="https://i.esdrop.com/d/f/CcSudjZ5R8/permf9tpHa.png">
 </div>
 <br>
-<div style=>
-
-
+<br>
 
 <h2> 📊 프로젝트 개요 </h2>
 
-<div>
-<p> 안녕하십니까
-</div>
+
+  
+  
 
 
 <h2> 🔥 화재 및 낙상 감지 </h2>
 
+  <p>
 <div>
 
 <details>
@@ -28,8 +27,7 @@
 </details>
 
 <h2> 👭 위로형 챗봇 : 한우리 </h2>
-
-<div>
+ 
 
 <details>
 <summary></summary>
@@ -43,8 +41,8 @@
 
 - - -
 <div align = "center">
-<h4> 💽Tech Stack 💽 </h4>
-<p> 🚋 Plaforms & Languages 💬
+<h5> 💽Tech Stack 💽 </h4>
+  <p> 🚋 Plaforms & Languages 💬 </p>
 <br><br>
 <img src = "https://img.shields.io/static/v1?label=Python&message=v3.8&color=red">
 <img src = "https://img.shields.io/static/v1?label=Flask&message=2.2.2&color=orange">
