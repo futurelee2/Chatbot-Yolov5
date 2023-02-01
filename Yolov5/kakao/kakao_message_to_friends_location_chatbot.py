@@ -34,7 +34,7 @@ def send_message_to_friends_location_chatbot():
             "template_object": json.dumps({
                 "object_type": "location",
                 "content": {
-                    "title": "불안정한 심리상태가 감지되었습니다.😥",
+                    "title": "불안정한 심리상태가 감지되었습니다.😭",
                     "description": "위로와 격려의 한 마디가 한 사람의 생명을 구할 수 있습니다.",
                     "image_url": "https://i.esdrop.com/d/f/NXl6YkfhTU/Ijliqh7jJz.png",
                     "image_width": 800,
