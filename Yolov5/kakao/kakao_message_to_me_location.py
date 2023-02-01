@@ -1,6 +1,6 @@
 # 나에게 위치 템플릿으로 보내기
 
-import kakao_utils
+from Yolov5.kakao import kakao_utils
 
 KAKAO_TOKEN_FILENAME = "./kakao_code.json" # "<kakao_token.json 파일이 있는 경로를 입력하세요.>"
 KAKAO_APP_KEY = "6188bf2cdc11ad8bb911d6ef9e0bcd46"

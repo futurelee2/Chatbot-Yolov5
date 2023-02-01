@@ -1,7 +1,8 @@
 # 나에게 위치 템플릿으로 보내기
 # 화재 일 때
 
-import kakao_utils
+from Yolov5.kakao import kakao_utils
+
 
 def send_message_to_me_location_fire():
     KAKAO_TOKEN_FILENAME = "./kakao_code.json"
@@ -41,4 +42,5 @@ def send_message_to_me_location_fire():
         print('텍스트 메시지를 성공적으로 보냈습니다.')
     else:
         print('텍스트 메시지를 보내지 못했습니다. 오류메시지 : ', res.json())
+
 

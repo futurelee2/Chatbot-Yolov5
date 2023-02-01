@@ -4,14 +4,8 @@ let state = 'SUCCESS';
 
  functions
 ////
-//function greet() {
-//    setTimeout(function () {
-//        return sendMessage("Kochat 데모에 오신걸 환영합니다.", 'left');
-//    }, 1000);
-//
-//    setTimeout(function () {
-//        return sendMessage("오늘의 기분은 어떠신가요?", 'left');
-//    }, 2000);
+
+
 //}
 //
 //function setUserName(username) {
@@ -56,6 +50,13 @@ function Message(arg) {
     }(this);
     return this;
 }
+
+function greet() {
+    setTimeout(function () {
+        return sendMessage("안녕하세요, 제 이름은 한우리 입니다.", 'left');
+    }, 1000);
+    }
+
 //
 function getMessageText() {
     let $message_input;
