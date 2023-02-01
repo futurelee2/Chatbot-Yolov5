@@ -101,7 +101,7 @@ class KoGPT2Chat(LightningModule):
             a = a[:mark_pos + 1]
             if a == "":
                 return "(끄덕끄덕) 듣고 있어요. 더 말씀해주세요!"
-            return  a
+            return a
 
 
 parser = KoGPT2Chat.add_model_specific_args(parser)
