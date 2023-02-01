@@ -41,8 +41,8 @@
 
 - - -
 <div align = "center">
-<h5> 💽Tech Stack 💽 </h4>
-  <p> 🚋 Plaforms & Languages 💬 </p>
+<h4> 💽Tech Stack 💽 </h4>
+🚋 Plaforms & Languages 💬
 <br><br>
 <img src = "https://img.shields.io/static/v1?label=Python&message=v3.8&color=red">
 <img src = "https://img.shields.io/static/v1?label=Flask&message=2.2.2&color=orange">
