@@ -12,7 +12,7 @@ def send_message_to_friends():
     while yolo_message_available:
         # KAKAO_TOKEN_FILENAME = "./kakao_code.json"  # "<kakao_token.json 파일이 있는 경로를 입력하세요.>"
         KAKAO_TOKEN_FILENAME = "./Yolov5/kakao/kakao_code.json"  # "<kakao_token.json 파일이 있는 경로를 입력하세요.>"
-        KAKAO_APP_KEY = "6188bf2cdc11ad8bb911d6ef9e0bcd46"
+        KAKAO_APP_KEY = "" # 어플의 REST KEY 넣어주면 됩니다.
         tokens = kakao_utils_friends.update_tokens(KAKAO_APP_KEY, KAKAO_TOKEN_FILENAME)
         headers={"Authorization" : "Bearer " + tokens["access_token"]}
 

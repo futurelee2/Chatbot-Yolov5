@@ -3,7 +3,7 @@
 from Yolov5.kakao import kakao_utils
 
 KAKAO_TOKEN_FILENAME = "./kakao_code.json" # "<kakao_token.json 파일이 있는 경로를 입력하세요.>"
-KAKAO_APP_KEY = "6188bf2cdc11ad8bb911d6ef9e0bcd46"
+KAKAO_APP_KEY = "" # 어플의 REST KEY 넣어주면 됩니다.
 tokens = kakao_utils.update_tokens(KAKAO_APP_KEY, KAKAO_TOKEN_FILENAME)
 
 template = {
