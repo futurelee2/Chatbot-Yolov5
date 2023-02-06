@@ -6,7 +6,7 @@ from Yolov5.kakao import kakao_utils
 
 def send_message_to_me_location_fire():
     KAKAO_TOKEN_FILENAME = "./kakao_code.json"
-    KAKAO_APP_KEY = "6188bf2cdc11ad8bb911d6ef9e0bcd46"
+    KAKAO_APP_KEY = "" # 어플의 REST KEY 넣어주면 됩니다.
     tokens = kakao_utils.update_tokens(KAKAO_APP_KEY, KAKAO_TOKEN_FILENAME)
 
     template = {

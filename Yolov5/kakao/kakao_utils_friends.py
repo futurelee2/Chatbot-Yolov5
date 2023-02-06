@@ -62,7 +62,7 @@ def send_message(filename, template):
     }
 
     # 카카오톡 보내기
-    url="https://kapi.kakao.com/v1/api/talk/memo/default/send"
+    url="https://kapi.kakao.com/v1/api/talk/memo/default/send" #v1 친구에게 전송할 때 사용
     res = requests.post(url, data=payload, headers=headers)
 
     return res
