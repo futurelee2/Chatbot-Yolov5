@@ -38,7 +38,7 @@ pip install -r requirements.txt
 <h5> 챗봇 학습 </h5>
 
 ```python
-# python train_torch.py --train --gpus 1 --max_epochs 3
+# python train_torch.py --train --gpus 1 --max_epochs 15
 ```
 <h6> 해당 코드를 통해 데이터를 학습시켜 CheckPoint를 만들어냅니다.<br><br>
      만든 CheckPoint는 --chat 명령어를 사용하는데 이용됩니다. <br><br><br>
