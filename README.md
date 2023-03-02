@@ -97,8 +97,13 @@ if __name__ == '__main__':
   <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/o5VYftQBrI.png">
 </div>
   <h5> 모델 학습 과정 </h5>
-  <h6> 데이터양, 라벨의 수, max_len 총 3가지를 수정하여 3회 정도 모델 학습을 진행하였습니다. <br><br>
-       최종적으로 사용한 모델은 데이터량 약 236,000개 / 라벨 총 3개 / max_len = 64 입니다. <br><br><br>
+  <h6> 학습은 max_epochs=15로 15번 반복하여 Train_loss값이 가장 낮은 모델을 저장하는 방식으로 진행됩니다.<br><br>
+       데이터양, 라벨의 수, max_len 총 3가지를 수정하여 3회 정도 모델 학습을 진행하였습니다. <br><br>
+       최종적으로 사용한 모델은 데이터량 약 236,000개 / 라벨 총 3개 / max_len = 64이며, epochs=4일 때, Train_loss가 31.63으로 가장 낮게 나왔습니다. <br><br>
+<div align= "center">
+  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/ZjI4VldVdJ.png">
+</div>
+  <br><br><br>
   </h6>
   
 </div>
@@ -108,7 +113,6 @@ if __name__ == '__main__':
 <div align= "center">
   <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/lY4MTWLTed.png">
 </div>
-  
 </details>
 
 <h2> 🔥 화재 및 낙상 감지 </h2>
@@ -125,9 +129,10 @@ if __name__ == '__main__':
   <h6>Yolo의 데이터셋은 <'AI HUB' 화재 발생 예측 영상>, <'GitHub' Fire-detection dataset>, <'AI HUB' 시니어 이상행동 영상>, <'Kaggle' Fall Detection Dataset> 총 4가지를 활       용하여 데이터셋을 구성했습니다.<br><br>
       데이터셋은 이미지와 라벨링 데이터 한쌍으로 구성되어 있으며, 라벨링 데이터는 Label, CenterX, CenterY, Width, Height로 구성되어 있는 Yolo TXT 형태여야 합니다. <br><br>
       해당 데이터셋 구성을 위해 COCO Json to Yolo Txt과 XML을 사용하여 로보플로우로 해당 라벨링 데이터를 만드는 방식을 선택했습니다.<br><br>
-      라벨링은 유사 상황 감지를 위해 총 13개로 구성되어 있으며, 실제 화재 및 낙상 감지 라벨은 2개입니다. <br><br><br>
+      라벨링은 유사 상황 감지를 위해 총 13개로 구성되어 있으며, 실제 화재 및 낙상 감지 라벨은 2개입니다.<br><br><br>
   </h6>
 </details>
+
 <details>
 <summary><b>모델 학습</b></summary>
 <div align= "center">
@@ -136,20 +141,21 @@ if __name__ == '__main__':
   <h5>모델 학습 과정 </h5>
   <h6> 모델 학습 방식은 Pre-Trained Model 파일에 파인튜닝 하는 방식으로 진행했습니다. <br><br>
        해당 프로젝트는 실시간 감지를 목적으로 했기 때문에 v5s 모델을 선택하여 파인튜닝을 진행했습니다. <br><br>
-       batch-size=64, epochs=100 로 학습을 진행하였으며,
-       epochs=84일 때 가장 좋은 모델이 생성되었으며, 'metric/mAP_0.5:0.95' 값이 0.619로 100번의 학습 과정동안 가장 높게 나왔습니다.
-       최종 학습이 종료된 후 나온 결과값은 다음과 같습니다.
+       batch-size=64, epochs=100 로 학습을 진행하였으며,<br><br>
+       epochs=84일 때 가장 좋은 모델이 생성되었으며, 'metric/mAP_0.5:0.95' 값이 0.619로 100번의 학습 과정동안 가장 높게 나왔습니다.<br><br>
+       최종 학습이 종료된 후 나온 결과값은 다음과 같습니다.<br><br>
+
 <div align= "center">
   <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/5QFgM6YsBY.png">
-</div>       
-  
-<br><br><br>
+</div>
+  <br><br><br>
   </h6>
 </details>
+
 <details>
 <summary><b>알고리즘</b></summary>
 <div align= "center">
-  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/uAsZeo66Tk.png">
+  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/QgditBmOf1.png">
 </div>
 </details>
 
