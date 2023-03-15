@@ -155,7 +155,7 @@ if __name__ == '__main__':
 <details>
 <summary><b>알고리즘</b></summary>
 <div align= "center">
-  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/QgditBmOf1.png">
+  <img width="850" src = "https://i.esdrop.com/d/f/NXl6YkfhTU/glD6OJhD3r.png">
 </div>
 </details>
 
