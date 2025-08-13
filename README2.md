@@ -1,10 +1,10 @@
 ```mermaid
 flowchart TB
-  %% 색상 정의
+  %% 스타일 정의
   classDef lane fill:#cce7ff,stroke:#3399ff,stroke-width:2px,color:#004080,font-weight:bold;
   classDef node fill:#e6f0ff,stroke:#3399ff,stroke-width:1.5px,color:#004080;
-  
-  %% Local 서브그래프
+
+  %% Local (첫 번째)
   subgraph L[Local]
     direction TB
     L1["html\nFlask"]:::node --> L2[OPEN]:::node
@@ -18,7 +18,7 @@ flowchart TB
   end
   class L lane;
 
-  %% Web Server 서브그래프
+  %% Web Server (두 번째)
   subgraph W[Web Server]
     direction TB
     W0[OPEN]:::node
@@ -28,7 +28,7 @@ flowchart TB
   end
   class W lane;
 
-  %% Web Page 서브그래프
+  %% Web Page (세 번째)
   subgraph P[Web Page]
     direction TB
     P0[OPEN]:::node
@@ -39,15 +39,17 @@ flowchart TB
   end
   class P lane;
 
-  %% Kakao 서브그래프
+  %% Kakao (마지막)
   subgraph K[카카오]
     direction TB
     K1["카카오\n메시지 전송"]:::node
   end
   class K lane;
 
-  %% 연결선
-  L2 --> W0 --> P0
+  %% 흐름 연결 순서대로 세로로
+  L2 --> W0
+  W0 --> P0
   D1 -->|Yes| K1
   D1 -->|No| P1
+
 ```
