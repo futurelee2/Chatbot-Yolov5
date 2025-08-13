@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
   %% --- Lanes ---
   subgraph L[Local]
@@ -40,3 +41,4 @@ flowchart LR
   L2 --> W0 --> P0
   D1 -->|Yes| K1
   D1 -->|No| P1
+```
