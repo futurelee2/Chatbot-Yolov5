@@ -111,7 +111,41 @@ if __name__ == '__main__':
 <details>
 <summary><b>알고리즘</b></summary>
 <div align= "center">
-  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/lY4MTWLTed.png">
+  ```mermaid
+sequenceDiagram
+    %%{init: {'theme':'base', 'themeVariables': { 'primaryColor': '#e6f3ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#87ceeb', 'lineColor': '#333'}}}%%
+    participant C as client
+    participant M as model
+    participant S as server
+    participant K as kakao
+    
+    Note over C,K: 실행 단계
+    C->>S: 1. Flask 실행
+    S->>C: 2. 웹페이지 오픈
+    
+    Note over C,K: 입출력 단계
+    C->>C: 3. 채팅입력 및 출력
+    C->>S: 4. 채팅 text json 저장
+    
+    C->>M: 5. notice
+    M->>S: 6. 채팅 text 요청
+    S->>M: 7. json 반환
+    M->>M: 8. Input → Model → Output
+    
+    alt 부정적 단어 7회 이상
+        M->>K: 8-1. 카카오톡 메시지 전송
+    end
+    
+    M->>S: 9. 모델링 결과 json 전송
+    S->>C: 10. json 클라이언트 전송
+    
+    alt 통신 성공
+        C->>C: 11. 대답 출력
+    else 통신 실패
+        C->>C: 11. 죄송합니다. 서버 연결에 실패했습니다
+    end
+```
+
 </div>
 </details>
 
@@ -136,49 +170,7 @@ if __name__ == '__main__':
 <details>
 <summary><b>모델 학습</b></summary>
 <div align= "center">
-  flowchart LR
-  %% --- Lanes ---
-  subgraph L[Local]
-    direction TB
-    L1[html<br/>Flask] --> L2[OPEN]
-    %% 입출력
-    L3[채팅 text<br/>요청] -->|json 요청| W1
-    W2 -->|json 응답| L4[채팅 text]
-    L5[Input] --> L6[model] --> L7[output] --> L8[대답 text]
-    L8 -->|json| W3
-    %% 부정 단어 감지 후 카카오
-    D1{부정적 단어<br/>7회 이상?}
-    L8 --> D1
-  end
-
-  subgraph W[Web Server]
-    direction TB
-    W0[OPEN]
-    W4[채팅 text<br/>json 저장]
-    W1[채팅 text<br/>요청받음]
-    W2[채팅 text]  %% 응답용
-    W3[대답 text] --> P1
-  end
-
-  subgraph P[Web Page]
-    direction TB
-    P0[OPEN]
-    P2[채팅입력] --> P3[채팅창 출력] --> W4
-    P1 --> C{응답 수신?}
-    C -->|True| P4[대답 text]
-    C -->|False| P5["죄송합니다.<br/>서버연결에 실패했습니다."]
-  end
-
-  subgraph K[카카오]
-    direction TB
-    K1[카카오<br/>메시지 전송]
-  end
-
-  %% --- Cross-lane links ---
-  L2 --> W0 --> P0
-  D1 -->|Yes| K1
-  D1 -->|No| P1
-
+  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/XWOHrkqMgU.png">
 </div>
   <h5>모델 학습 과정 </h5>
   <h6> 모델 학습 방식은 Pre-Trained Model 파일에 파인튜닝 하는 방식으로 진행했습니다. <br><br>
@@ -197,7 +189,7 @@ if __name__ == '__main__':
 <details>
 <summary><b>알고리즘</b></summary>
 <div align= "center">
-  <img width="850" src = "https://i.esdrop.com/d/f/NXl6YkfhTU/glD6OJhD3r.png">
+  <img width="850" src = "https://i.esdrop.com/d/f/CcSudjZ5R8/QgditBmOf1.png">
 </div>
 </details>
 
