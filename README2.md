@@ -6,6 +6,7 @@ flowchart LR
     L1["html\nFlask"] --> L2[OPEN]
     %% 입출력
     L3["채팅 text\n요청"] -->|json 요청| W1
+    W2["채팅 text"]  %% 응답용
     W2 -->|json 응답| L4["채팅 text"]
     L5[Input] --> L6[model] --> L7[output] --> L8["대답 text"]
     L8 -->|json| W3
@@ -19,7 +20,6 @@ flowchart LR
     W0[OPEN]
     W4["채팅 text\njson 저장"]
     W1["채팅 text\n요청받음"]
-    W2["채팅 text"]  %% 응답용
     W3["대답 text"] --> P1
   end
 
