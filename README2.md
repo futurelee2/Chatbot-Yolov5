@@ -4,13 +4,11 @@ flowchart LR
   subgraph L[Local]
     direction TB
     L1["html\nFlask"] --> L2[OPEN]
-    %% 입출력
     L3["채팅 text\n요청"] -->|json 요청| W1
-    W2["채팅 text"]  %% 응답용
+    W2["채팅 text"]
     W2 -->|json 응답| L4["채팅 text"]
     L5[Input] --> L6[model] --> L7[output] --> L8["대답 text"]
     L8 -->|json| W3
-    %% 부정 단어 감지 후 카카오
     D1{"부정적 단어\n7회 이상?"}
     L8 --> D1
   end
@@ -37,8 +35,8 @@ flowchart LR
     K1["카카오\n메시지 전송"]
   end
 
-  %% --- Cross-lane links ---
   L2 --> W0 --> P0
   D1 -->|Yes| K1
   D1 -->|No| P1
+
 ```
