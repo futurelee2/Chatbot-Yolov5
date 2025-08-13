@@ -1,5 +1,6 @@
 ```mermaid
 sequenceDiagram
+    %%{init: {'theme':'base', 'themeVariables': { 'primaryColor': '#e6f3ff', 'primaryTextColor': '#333', 'primaryBorderColor': '#87ceeb', 'lineColor': '#333'}}}%%
     participant C as client
     participant M as model
     participant S as server
