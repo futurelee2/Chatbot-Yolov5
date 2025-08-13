@@ -1,5 +1,5 @@
 ```mermaid
-flowchart LR
+**flowchart LR
   %% --- Lanes ---
   subgraph L[Local]
     direction TB
@@ -40,5 +40,5 @@ flowchart LR
   %% --- Cross-lane links ---
   L2 --> W0 --> P0
   D1 -->|Yes| K1
-  D1 -->|No| P1
+  D1 -->|No| P1**
 ```
